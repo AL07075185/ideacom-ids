@@ -1,0 +1,27 @@
+# Maven
+target/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+nbproject/
+nb-configuration.xml
+nbactions.xml
+.settings/
+.project
+.classpath
+
+# Agente (datos locales: nunca subir el token)
+**/datos/
+agente.properties
+agente-estado.properties
+eventos-pendientes.jsonl
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Driver JDBC descargado localmente (no se versiona)
+deploy/glassfish/*.jar
