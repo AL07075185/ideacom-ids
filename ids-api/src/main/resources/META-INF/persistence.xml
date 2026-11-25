@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.0"
+             xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+
+    <!-- La conexion la administra GlassFish (pool idsPool -> recurso jdbc/idsDS). -->
+    <persistence-unit name="idsPU" transaction-type="JTA">
+        <jta-data-source>jdbc/idsDS</jta-data-source>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <!-- El esquema se crea con db/schema.sql, no automaticamente -->
+            <property name="jakarta.persistence.schema-generation.database.action" value="none"/>
+            <property name="eclipselink.logging.level" value="WARNING"/>
+            <property name="eclipselink.target-database" value="MySQL"/>
+            <!-- Sin cache compartida: la BD aplica ON DELETE CASCADE / SET NULL y los
+                 datos cambian cada minuto por los latidos; asi siempre se lee lo vigente -->
+            <property name="eclipselink.cache.shared.default" value="false"/>
+        </properties>
+    </persistence-unit>
+</persistence>
