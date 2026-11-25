@@ -1,6 +1,6 @@
 # ideacom IDS — Infrastructure & Device Status
 
-[![Build Status](https://app.travis-ci.com/AL07075185/ideacom-ids.svg?branch=develop)](https://app.travis-ci.com/AL07075185/ideacom-ids)
+[![Build Status](https://drone.ideacom.mx/api/badges/AL07075185/ideacom-ids/status.svg?ref=refs/heads/develop)](https://drone.ideacom.mx/AL07075185/ideacom-ids)
 
 Sistema ligero de monitoreo de disponibilidad de dispositivos para **ideacom**. Un agente instalado en cada equipo reporta su estado a una API REST en la nube, que detecta desconexiones, apagados y pérdidas de internet, guarda el historial y calcula la disponibilidad. Un panel web permite al área de soporte consultar el estado, aprobar equipos, ver el mapa de red y gestionar incidencias.
 
@@ -70,13 +70,13 @@ cd ideacom-ids
 mvn -B clean verify        # compila los módulos y ejecuta las pruebas JUnit 5
 ```
 
-Las mismas pruebas se ejecutan en [Travis CI](https://app.travis-ci.com/AL07075185/ideacom-ids) en cada push y pull request.
+Las mismas pruebas se ejecutan en [Drone CI](https://drone.ideacom.mx/AL07075185/ideacom-ids) en cada push y pull request, dentro del contenedor `maven:3.9-eclipse-temurin-21` (archivo `.drone.yml`).
 
 ## Flujo de trabajo
 
 - `master`: versiones liberadas, marcadas con tags (`v1.1.0-beta`, `v1.1.0-rc.1`, `v1.1.0`).
 - `develop`: integración diaria; rama por defecto.
-- `feature/...` y `fix/...`: una rama por issue, integrada a `develop` mediante pull request con Travis CI en verde.
+- `feature/...` y `fix/...`: una rama por issue, integrada a `develop` mediante pull request con Drone CI en verde.
 - Cada requerimiento de la especificación es un **issue** con descripción, análisis y solución, etiquetado por elemento y prioridad.
 - **Milestones:** Beta (26/11/2026), RC (30/11/2026), GA (01/12/2026) y Roadmap (fuera de la versión 1).
 - Tablero Kanban en **Zube** sincronizado con los issues.
