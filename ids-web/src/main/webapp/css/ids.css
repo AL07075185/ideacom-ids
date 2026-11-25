@@ -1,0 +1,13 @@
+body { background: #f4f6f9; }
+.tarjeta-metrica { border: 0; border-radius: .75rem; }
+.tarjeta-metrica .valor { font-size: 1.75rem; font-weight: 600; line-height: 1.1; }
+.tarjeta-metrica .etiqueta { color: #6c757d; font-size: .85rem; }
+.table td, .table th { vertical-align: middle; }
+.tabla-compacta td { padding-top: .35rem; padding-bottom: .35rem; }
+#red { height: 72vh; background: #fff; border: 1px solid #dee2e6; border-radius: .5rem; }
+.leyenda span { display: inline-flex; align-items: center; gap: .35rem; margin-right: 1rem; font-size: .85rem; }
+.leyenda i { width: .8rem; height: .8rem; border-radius: 50%; display: inline-block; }
+.login-caja { max-width: 380px; }
+.codigo { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.dl-compacta dt { color: #6c757d; font-weight: 500; }
+.dl-compacta dd { margin-bottom: .4rem; }
