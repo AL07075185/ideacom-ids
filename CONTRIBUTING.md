@@ -47,6 +47,6 @@ En la descripción escribe `Closes #<número>` para que el issue se cierre al fu
 
 ## 6. Esperar la revisión y el merge
 
-- Travis CI debe terminar en verde.
+- Drone CI debe terminar en verde.
 - Se revisa el cambio y se fusiona con **Merge pull request** (sin borrar la rama).
 - Las versiones se liberan integrando `develop` en `master` con un tag.
