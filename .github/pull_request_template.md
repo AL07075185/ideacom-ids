@@ -8,5 +8,5 @@ Qué cambia y por qué.
 - Closes #
 
 ## Pruebas
-- [ ] `mvn -B clean verify` en verde (Travis CI)
+- [ ] `mvn -B clean verify` en verde (Drone CI)
 - [ ] Sin credenciales ni datos reales

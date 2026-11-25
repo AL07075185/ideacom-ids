@@ -1,0 +1,26 @@
+# ideacom IDS - configuracion del agente
+# Copia este archivo como agente.properties junto a ids-agente.jar
+
+# URL de la API.
+#   GlassFish local:                http://localhost:8080/ids-api/api/v1
+#   Desde una VM hacia tu equipo:   http://192.168.56.1:8080/ids-api/api/v1
+#   Produccion (AWS + Nginx):       https://ids.ideacom.mx/ids-api/api/v1
+api.url=http://localhost:8080/ids-api/api/v1
+
+# Codigo de alta del sitio (se ve en el panel: Administracion > Sitios)
+codigo.alta=IDS-DEMO-2026
+
+# local | produccion   (produccion exige https)
+perfil=local
+
+# Intervalo inicial del latido; el servidor puede ajustarlo
+intervalo.segundos=60
+
+# Tiempo maximo de espera de cada peticion
+timeout.ms=5000
+
+# Destinos para probar la salida a internet (TCP host:puerto)
+internet.hosts=1.1.1.1:443,8.8.8.8:53
+
+# Carpeta para el token, eventos pendientes y logs
+datos.dir=datos

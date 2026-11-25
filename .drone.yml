@@ -1,0 +1,17 @@
+# Integración continua de ideacom IDS con Drone CI
+# Compila los módulos con Maven y ejecuta las pruebas JUnit 5 en cada push y pull request.
+kind: pipeline
+type: docker
+name: compilar-y-probar
+
+trigger:
+  event:
+    - push
+    - pull_request
+
+steps:
+  - name: pruebas-junit
+    image: maven:3.9-eclipse-temurin-21
+    commands:
+      - java -version
+      - mvn -B -V clean verify

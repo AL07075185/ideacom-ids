@@ -1,0 +1,25 @@
+# Servicio systemd para Linux (VPS, servidores, VM de prueba).
+# Instalacion:
+#   sudo useradd -r -s /usr/sbin/nologin ids-agente
+#   sudo mkdir -p /opt/ids-agente && sudo cp ids-agente.jar agente.properties /opt/ids-agente/
+#   sudo chown -R ids-agente: /opt/ids-agente
+#   sudo cp ids-agente.service /etc/systemd/system/
+#   sudo systemctl daemon-reload && sudo systemctl enable --now ids-agente
+#   journalctl -u ids-agente -f      (ver el log)
+[Unit]
+Description=ideacom IDS - agente de monitoreo
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ids-agente
+WorkingDirectory=/opt/ids-agente
+ExecStart=/usr/bin/java -Xmx64m -jar /opt/ids-agente/ids-agente.jar /opt/ids-agente/agente.properties
+Restart=always
+RestartSec=10
+# Da tiempo al aviso de apagado (el agente usa maximo 3 s)
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target
