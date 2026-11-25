@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources PUBLIC "-//GlassFish.org//DTD GlassFish Application Server 3.1 Resource Definitions//EN"
+        "http://glassfish.org/dtds/glassfish-resources_1_5.dtd">
+<!--
+  Pool de conexiones y recurso JDBC para ideacom IDS.
+  Cargar con:  asadmin add-resources glassfish-resources.xml
+  Cambia el password antes de usarlo en AWS.
+  preserveInstants=false: las fechas (UTC) se guardan tal cual, sin conversion de zona.
+-->
+<resources>
+    <jdbc-connection-pool name="idsPool"
+                          res-type="javax.sql.DataSource"
+                          datasource-classname="com.mysql.cj.jdbc.MysqlDataSource"
+                          steady-pool-size="2" max-pool-size="20"
+                          is-connection-validation-required="true"
+                          connection-validation-method="auto-commit"
+                          fail-all-connections="true">
+        <property name="url"
+                  value="jdbc:mysql://localhost:3306/ideacom_ids?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;preserveInstants=false&amp;characterEncoding=UTF-8"/>
+        <property name="user" value="ids"/>
+        <property name="password" value="CambiaEstaClave_2026"/>
+    </jdbc-connection-pool>
+    <jdbc-resource pool-name="idsPool" jndi-name="jdbc/idsDS"/>
+</resources>
