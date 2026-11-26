@@ -6,7 +6,7 @@
 
     <groupId>mx.ideacom</groupId>
     <artifactId>ideacom-ids</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.1.0</version>
     <packaging>pom</packaging>
     <name>ideacom IDS</name>
     <description>Monitoreo de disponibilidad de dispositivos: agente, API REST y panel web</description>

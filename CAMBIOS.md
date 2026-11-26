@@ -1,3 +1,11 @@
+# Cambios — versión 1.1.0 (26 nov 2026)
+
+- Versión del proyecto `1.1.0` en los `pom.xml`.
+- Correo del administrador por defecto: `admin@domain.local`.
+- Despliegue en producción en AWS Lightsail: Nginx con TLS, GlassFish 8.0.5 y MySQL 8.0.
+- Integración continua con Drone CI: 55 pruebas JUnit en cada push y pull request.
+- Validado en producción (RC): aviso de arranque y apagado, y reporte de disponibilidad.
+
 # Cambios — versión 1.1 (17 nov 2026)
 
 Resumen de lo que cambió respecto a la primera versión, para revisarlo antes de pasar a producción.
