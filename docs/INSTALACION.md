@@ -82,7 +82,7 @@ El driver se puede bajar con Maven: `mvn dependency:copy -Dartifact=com.mysql:my
    e `/ids-web` las fija `WEB-INF/glassfish-web.xml`.
 
 Abre **http://localhost:8080/ids-web/** y entra con:
-- correo `admin@ideacom.local`
+- correo `admin@domain.local`
 - contraseña `Admin123!` (cámbiala en *Administración > Usuarios*)
 
 ## 4. Agente
